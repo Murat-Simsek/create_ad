@@ -1,0 +1,9 @@
+class FileHandler:
+
+    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+    @staticmethod
+    def allowed_file(filename):
+        return '.' in filename and \
+                filename.rsplit('.', 1)[1].lower() in FileHandler.ALLOWED_EXTENSIONS
+
