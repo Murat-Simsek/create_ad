@@ -10,7 +10,7 @@ from img2img.utils.hex_to_color import hex_to_name
 from img2img.create_template import organise_image
 
 file_handler = FileHandler()
-new_image = Hfimg2img()
+# new_image = Hfimg2img()
 
 app = Flask(__name__)
 
@@ -36,7 +36,7 @@ def img2img():
         prompt = request.form.get('prompt', "a beautiful photo")  # Default prompt if empty
 
         # Hf code, return image.
-        generated_img_path = new_image.img2img_generate(file_path, prompt, hex_color)
+        # generated_img_path = new_image.img2img_generate(file_path, prompt, hex_color)
         return send_file(os.path.join(generated_img_path))
 
 
@@ -105,5 +105,5 @@ def gradio_img2img():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run()
     # serve(app, host='0.0.0.0', port=8080)
