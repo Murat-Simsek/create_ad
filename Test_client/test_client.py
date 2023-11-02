@@ -2,7 +2,7 @@ import requests
 
 
 def test_upload():
-    url = 'http://127.0.0.1:8080/img2img'
+    url = 'http://10.182.0.4:5000/img2img'
     file_path = '../coffee.png'
     hex_color = "#FFCE30"
     prompt_input = "A glass cup of coffee, detailed, 8k"
