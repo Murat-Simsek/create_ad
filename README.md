@@ -9,7 +9,7 @@ To use the server for the first route use:
 ```
 import request
 
-url = 'http://34.16.156.84:5000/img2img'
+url = 'http://34.16.156.84/img2img'
     file_path = '../coffee.png'
     hex_color = "#FFCE30"
     prompt_input = "A glass cup of coffee, detailed, 8k"
