@@ -25,6 +25,14 @@ url = 'http://34.16.156.84:5000/img2img'
     with open('received_image.png', 'wb') as f:
         f.write(response.content)
 ```
+### Original image
 <img src="/images/received_image.jpg" title="Orginal picture">
+
+### Generated image
+<img src="/images/tmpsd1ym3me.png" title="Generated picture">
+
+### Template with dynamic text, logo, image and color.
+<img src="/images/tmpsd1ym3me_final_image.png" title="Template picture">
+
 The server can be used by the client code in Test_client folder.
 
