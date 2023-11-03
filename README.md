@@ -25,7 +25,6 @@ url = 'http://34.16.156.84:5000/img2img'
     with open('received_image.png', 'wb') as f:
         f.write(response.content)
 ```
-
-![Alt text](/image/received_image.jpg "Orginal picture")
+<img src="/image/received_image.jpg" title="Orginal picture">
 The server can be used by the client code in Test_client folder.
 
