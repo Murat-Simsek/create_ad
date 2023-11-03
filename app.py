@@ -13,6 +13,9 @@ new_image = Hfimg2img()
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+   return "Hello World!"
 
 @app.route("/img2img",  methods=['POST'])
 def img2img():

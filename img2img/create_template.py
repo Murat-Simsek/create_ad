@@ -48,7 +48,7 @@ def organise_image(generated_image, logo, text_punchline, button_text, theme_col
     # Initialize ImageDraw
     draw = ImageDraw.Draw(white_background)
     # Load a truetype font with a smaller size
-    font = ImageFont.truetype('arial.ttf', 50)
+    font = ImageFont.truetype('img2img/font_natural.ttf', 50)
 
     # Define the position and size of the text box
     text_box_position = (a4_size[0]/10, a4_size[1]-900)  # Increase the distance from the top of the image
@@ -74,7 +74,7 @@ def organise_image(generated_image, logo, text_punchline, button_text, theme_col
     # Initialize ImageDraw
     draw = ImageDraw.Draw(white_background)
     # Load a truetype font with a smaller size
-    font = ImageFont.truetype('arial.ttf', 50)
+    font = ImageFont.truetype('img2img/font_natural.ttf', 50)
 
     # Define the position and size of the text box
     text_box_position = (a4_size[0]/4, a4_size[1]-400)  # Increase the distance from the top of the image
