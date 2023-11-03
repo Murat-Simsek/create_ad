@@ -3,8 +3,8 @@ import requests
 
 def test_upload():
     url = 'http://34.16.156.84:5000/img2img'
-    # url = 'http://127.0.0.1:5000/img2img'
-    file_path = '../test_img.png'
+    url = 'http://127.0.0.1:5000/img2img'
+    file_path = '../horse.png'
     hex_color = "#FFCE30"
     prompt_input = "A glass cup of coffee, detailed, 8k"
 
@@ -22,7 +22,7 @@ def test_upload():
 
 def test_orginizer():
     url = 'http://34.16.156.84:5000/template_img'
-    url = 'http://127.0.0.1:5000/template_img'
+    # url = 'http://127.0.0.1:5000/template_img'
     file_path1 = '../Test_client/received_image.png'
     file_path2 = '../img2img/coffee_logo.png'
     theme_color = "#FFCE80"
@@ -39,5 +39,5 @@ def test_orginizer():
         f.write(response.content)
 
 
-#test_upload()
-test_orginizer()
+test_upload()
+#test_orginizer()
