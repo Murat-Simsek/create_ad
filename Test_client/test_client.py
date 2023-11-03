@@ -3,8 +3,8 @@ import requests
 
 def test_upload():
     url = 'http://34.16.156.84:5000/img2img'
-    url = 'http://127.0.0.1:5000/img2img'
-    file_path = '../horse.png'
+    # url = 'http://127.0.0.1:5000/img2img'
+    file_path = '../test_img.png'
     hex_color = "#FFCE30"
     prompt_input = "A glass cup of coffee, detailed, 8k"
 
