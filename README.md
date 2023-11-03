@@ -36,3 +36,10 @@ url = 'http://34.16.156.84/img2img'
 
 The server can be used by the client code in Test_client folder.
 
+To lunch the server:
+```
+pip install -r requirements.txt
+
+gunicorn  --timeout 0 --workers=2 app:app
+
+```
