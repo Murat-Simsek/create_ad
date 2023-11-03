@@ -13,12 +13,22 @@ new_image = Hfimg2img()
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-   return "Hello World!"
+
 
 @app.route("/img2img",  methods=['POST'])
 def img2img():
+
+    """
+    This Flask route handles POST requests to "/img2img". It accepts an image file and a hex color code from the request. 
+
+    INPUTS:
+    - 'file': Image file to be used for image-to-image transformation.
+    - 'hex_color': Hex color code. Defaults to '#FFFFFF' if not provided.
+    - 'prompt': Text prompt providing additional context for the image-to-image transformation.
+
+    OUTPUTS:
+    - Returns the transformed image file.
+    """
     if 'file' not in request.files:
         return 'No file part'
     file = request.files['file']
@@ -44,6 +54,21 @@ def img2img():
 
 @app.route("/template_img",  methods=['POST'])
 def template_img():
+
+    """
+    This Flask route handles POST requests to "/template_img". It accepts two image files and a theme color from the request. 
+
+    INPUTS:
+    - 'file1': First image file to be used for image organization.
+    - 'file2': Second image file (typically a logo) to be used for image organization.
+    - 'theme_color': Hex color code for the theme. Defaults to '#FFFFFF' if not provided.
+    - 'punchline_text': Text to be used as a punchline. Defaults to "a beautiful photo" if not provided.
+    - 'button_text': Text to be used on the button. Defaults to "Press here" if not provided.
+
+    OUTPUTS:
+    - Returns the organized image file.
+    """
+    
     if 'file1' not in request.files or 'file2' not in request.files:
         return 'No file part'
     file1 = request.files['file1']

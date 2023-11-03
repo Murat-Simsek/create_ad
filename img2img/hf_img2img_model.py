@@ -19,7 +19,8 @@ class Hfimg2img():
     def img2img_generate(self, file_path, prompt, hex_color):
 
         init_image = Image.open(file_path).convert("RGB")
-
+        init_image = init_image.resize((512, 512))
+        
         prompt = prompt + ", theme color " + hex_color  # " A glass cup of coffee, detailed, 8k"
 
         image = self.pipeline(prompt, image=init_image, guidance_scale=8.0).images[0]
