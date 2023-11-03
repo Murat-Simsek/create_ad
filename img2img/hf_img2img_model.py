@@ -6,14 +6,15 @@ from diffusers import AutoPipelineForImage2Image
 
 class Hfimg2img():
     def __init__(self) -> None:
-        # self.pipeline = AutoPipelineForImage2Image.from_pretrained(
-        # "runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
-
-        # self.pipeline.enable_model_cpu_offload()
-        
-        # CPU
-        self.pipeline = AutoPipelineForImage2Image.from_pretrained(
-        "runwayml/stable-diffusion-v1-5", variant="fp32", use_safetensors=True).to("cpu")
+        # Check if a GPU is available
+        if torch.cuda.is_available():
+        # If a GPU is available, move the pipeline to the GPU
+            self.pipeline = AutoPipelineForImage2Image.from_pretrained(
+            "runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
+        else:
+        # If a GPU is not available, keep the pipeline on the CPU
+            self.pipeline = AutoPipelineForImage2Image.from_pretrained(
+            "runwayml/stable-diffusion-v1-5", variant="fp32").to("cpu")
 
     def img2img_generate(self, file_path, prompt, hex_color):
 
